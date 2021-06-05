@@ -1,0 +1,13 @@
+class Solution {
+public:
+    bool isPalindrome(string s) {
+        s.erase(remove_if(s.begin(), s.end(), ::isspace), s.end());
+        s.erase(remove_if(s.begin(), s.end(), ::ispunct), s.end());
+        cout<<s;
+        for(int i=0;i<s.length()/2;i++)
+        {
+            if(tolower(s[i])!=tolower(s[s.length()-i-1])) return 0;
+        }
+        return 1;
+    }
+};
